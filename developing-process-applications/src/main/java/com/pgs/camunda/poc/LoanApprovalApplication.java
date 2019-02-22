@@ -5,4 +5,5 @@ import org.camunda.bpm.application.impl.ServletProcessApplication;
 
 @ProcessApplication("Load Approval App")
 public class LoanApprovalApplication extends ServletProcessApplication {
+    // camunda
 }
