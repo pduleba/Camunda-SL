@@ -10,9 +10,6 @@
       <bpmn:outgoing>SequenceFlow_1</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_1" name="" sourceRef="ServiceTask_1" targetRef="UserTask_11fud4o"/>
-    <bpmn:endEvent id="EndEvent_1i5bz86" name="Loan Request Approved">
-      <bpmn:incoming>SequenceFlow_2</bpmn:incoming>
-    </bpmn:endEvent>
     <bpmn:serviceTask id="ServiceTask_2" camunda_1:class="org.camunda.bpm.getstarted.loanapproval.PostProcessRequestDelegate" name="Post Approval ">
       <bpmn:incoming>SequenceFlow_1y4c0rn</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_2</bpmn:outgoing>
@@ -23,6 +20,9 @@
       <bpmn:outgoing>SequenceFlow_1y4c0rn</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_1y4c0rn" sourceRef="UserTask_11fud4o" targetRef="ServiceTask_2"/>
+    <bpmn:endEvent id="EndEvent_1i5bz86" name="Loan Request Approved">
+      <bpmn:incoming>SequenceFlow_2</bpmn:incoming>
+    </bpmn:endEvent>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="approve-loan">
@@ -40,21 +40,19 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="UserTask_11fud4o_di" bpmnElement="UserTask_11fud4o">
-        <dc:Bounds height="80.0" width="100.0" x="432.0" y="117.0"/>
+        <dc:Bounds height="80.0" width="100.0" x="439.0" y="114.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_1i5bz86_di" bpmnElement="EndEvent_1i5bz86">
-        <dc:Bounds height="36.0" width="36.0" x="796.0" y="136.0"/>
+        <dc:Bounds height="36.0" width="36.0" x="816.0" y="136.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="22.0" width="143.0" x="743.0" y="172.0"/>
+          <dc:Bounds height="22.0" width="143.0" x="763.0" y="172.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1y4c0rn_di" bpmnElement="SequenceFlow_1y4c0rn" targetElement="_BPMNShape_ServiceTask_3">
-        <di:waypoint xsi:type="dc:Point" x="532.0" y="157.0"/>
-        <di:waypoint xsi:type="dc:Point" x="572.0" y="157.0"/>
-        <di:waypoint xsi:type="dc:Point" x="572.0" y="154.0"/>
+        <di:waypoint xsi:type="dc:Point" x="539.0" y="154.0"/>
         <di:waypoint xsi:type="dc:Point" x="636.0" y="154.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="0.0" width="0.0" x="539.0" y="157.0"/>
+          <dc:Bounds height="0.0" width="0.0" x="546.0" y="154.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_ServiceTask_2" bpmnElement="ServiceTask_1">
@@ -62,9 +60,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="_BPMNShape_ServiceTask_2" targetElement="UserTask_11fud4o_di">
         <di:waypoint xsi:type="dc:Point" x="352.0" y="154.0"/>
-        <di:waypoint xsi:type="dc:Point" x="380.0" y="154.0"/>
-        <di:waypoint xsi:type="dc:Point" x="380.0" y="157.0"/>
-        <di:waypoint xsi:type="dc:Point" x="432.0" y="157.0"/>
+        <di:waypoint xsi:type="dc:Point" x="439.0" y="154.0"/>
         <bpmndi:BPMNLabel>
           <dc:Bounds height="6.0" width="6.0" x="356.0" y="154.0"/>
         </bpmndi:BPMNLabel>
@@ -74,7 +70,10 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="_BPMNShape_ServiceTask_3" targetElement="EndEvent_1i5bz86_di">
         <di:waypoint xsi:type="dc:Point" x="736.0" y="154.0"/>
-        <di:waypoint xsi:type="dc:Point" x="796.0" y="154.0"/>
+        <di:waypoint xsi:type="dc:Point" x="816.0" y="154.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="763.0" y="154.0"/>
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
